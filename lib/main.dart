@@ -1,4 +1,4 @@
-import 'package:capstone_project/screens/started_content_screen.dart';
+import 'package:capstone_project/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 
@@ -22,7 +22,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: StartedContentScreen(),
+      // home: StartedContentScreen(),
+      home: HomeScreen(),
     );
   }
 }

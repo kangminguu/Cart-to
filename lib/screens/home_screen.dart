@@ -5,10 +5,13 @@ import 'package:capstone_project/screens/navi_screens/mypage_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 final List<CameraDescription> _cameras = ProvideCamera().cameras;
 late CameraController _controller;
+
+bool _isAnimated = false;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -67,6 +70,10 @@ class _HomeScreenState extends State<HomeScreen> {
         }
       }
     });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      _isAnimated = true;
+    });
   }
 
   // // 로그인 정보 불러오기 함수
@@ -92,6 +99,9 @@ class _HomeScreenState extends State<HomeScreen> {
   //   }
   // }
 
+  // 카드 넘어가는거
+  int _index = 0;
+
   @override
   Widget build(BuildContext context) {
     if (!_controller.value.isInitialized) {
@@ -104,120 +114,321 @@ class _HomeScreenState extends State<HomeScreen> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            centerTitle: true,
-            title: Text(
-              "홈",
-              style: TextStyle(
-                color: const Color(0xFF000000).withOpacity(1.0),
-                fontSize: 18,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            backgroundColor: const Color(0xFF000000).withOpacity(0.0),
-            shadowColor: Colors.grey.withOpacity(0.0),
-            leading: IconButton(
-              onPressed: () {
-                // Navigator.pop(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => ,
-                //   ),
-                // );
-                print("여기를 누르면 앱이 종료되도록");
-              },
-              icon: const Icon(Icons.arrow_back_ios_new),
-              color: const Color(0xFF000000).withOpacity(0.5),
-            ),
-          ),
-          backgroundColor: const Color(0xFFFFFFFF),
+          backgroundColor: const Color(0xFFF6F6F6),
           resizeToAvoidBottomInset: false,
-          body: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
-              alignment: Alignment.center,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: mediaHeight(context, 100 / 100),
-                    width: mediaWidth(context, 0.85),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: mediaHeight(context, 11 / 100),
-                          decoration: const BoxDecoration(
-                            border: Border(
-                              bottom: BorderSide(
-                                color: Colors.black,
-                                width: 0.1,
-                              ),
+          body: Column(
+            children: [
+              SizedBox(
+                // color: const Color(0xffE87D5C), // 변경된 주황색, 좀 더 채도를 낮춤
+                height: mediaHeight(context, 50 / 100),
+                child: Stack(
+                  children: [
+                    SvgPicture.asset(
+                      "images/home_background.svg",
+                      fit: BoxFit.fill,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: mediaHeight(context, 3 / 100),
+                        left: mediaWidth(context, 6 / 100),
+                      ),
+                      width: mediaWidth(context, 35 / 100),
+                      child: SvgPicture.asset(
+                        "images/logo.svg",
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: mediaHeight(context, 10 / 100),
+                        left: mediaWidth(context, 6 / 100),
+                      ),
+                      child: Text(
+                        "당신의 쇼핑 메이트\n이제 편리하게\n당신의 소비를 기록하세요.",
+                        style: TextStyle(
+                          color: const Color(0xFFFFFFFF),
+                          fontSize: mediaHeight(context, 2.2 / 100),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: mediaWidth(context, 75 / 100),
+                      margin: EdgeInsets.only(
+                        top: mediaHeight(context, 20 / 100),
+                        left: mediaWidth(context, 8 / 100),
+                      ),
+                      child: SvgPicture.asset(
+                        "images/moving_cart.svg",
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(
+                        top: mediaHeight(context, 27 / 100),
+                        left: mediaWidth(context, 70 / 100),
+                      ),
+                      width: mediaWidth(context, 25 / 100),
+                      child: SvgPicture.asset(
+                        "images/phone.svg",
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: mediaHeight(context, 50 / 100),
+                // color: Colors.pink.shade100,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: mediaHeight(context, 8 / 100),
+                      width: mediaWidth(context, 85 / 100),
+                      child: Row(
+                        children: [
+                          Text(
+                            "사용자",
+                            style: TextStyle(
+                              color: const Color(0xFFE87D5C),
+                              fontSize: mediaHeight(context, 2.5 / 100),
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Text(
-                                // nickname,
-                                "강민구",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xffFF7448),
-                                ),
-                              ),
-                              Text(
-                                "님, 환영합니다.",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                              ),
-                            ],
+                          SizedBox(
+                            width: mediaWidth(context, 0.3 / 100),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const MypageScreen(),
+                          Text(
+                            "님, 환영합니다!",
+                            style: TextStyle(
+                              color: const Color(0xFF474747),
+                              fontSize: mediaHeight(context, 2.5 / 100),
+                              fontWeight: FontWeight.normal,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: mediaHeight(context, 30 / 100), // card height
+                      child: PageView.builder(
+                        itemCount: 3,
+                        controller: PageController(viewportFraction: 0.85),
+                        onPageChanged: (int index) =>
+                            // setState(() => _index = index),
+                            setState(() {
+                          _index = index;
+                        }),
+                        itemBuilder: (_, i) {
+                          final List pages = [
+                            const CartCameraScreen(),
+                            const CalendarScreen(),
+                            const MypageScreen(),
+                          ];
+
+                          final List descs = [
+                            "카트 촬영하기",
+                            "쇼핑 기록 확인하기",
+                            "내 정보 확인하기",
+                          ];
+
+                          final List descDetail = [
+                            "카트를 촬영하고\n편리하게 쇼핑 목록을\n기록하세요.",
+                            "기록한 쇼핑 내역을\n확인하세요.",
+                            "입력된 내 정보를\n확인하고\n수정할 수 있어요.",
+                          ];
+
+                          final List images = [
+                            "images/cart_logo.svg",
+                            "images/calendar_log.svg",
+                            "images/user_info.svg",
+                          ];
+
+                          return Transform.scale(
+                            scale: i == _index ? 1 : 0.90,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => pages[i],
+                                  ),
+                                );
+                              },
+                              child: Card(
+                                // elevation: 6,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Stack(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                        top: mediaHeight(context, 3 / 100),
+                                        left: mediaHeight(context, 3 / 100),
+                                      ),
+                                      child: Text(
+                                        descs[i],
+                                        style: TextStyle(
+                                          color: const Color(0xFF474747),
+                                          fontSize:
+                                              mediaHeight(context, 2.5 / 100),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                        top: mediaHeight(context, 7 / 100),
+                                        left: mediaHeight(context, 3 / 100),
+                                      ),
+                                      child: Text(
+                                        descDetail[i],
+                                        style: TextStyle(
+                                          color: const Color(0xFF474747),
+                                          fontSize:
+                                              mediaHeight(context, 2.0 / 100),
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(
+                                          left: mediaWidth(context, 45 / 100),
+                                          top: mediaHeight(context, 10 / 100)),
+                                      width: mediaWidth(context, 30 / 100),
+                                      child: SvgPicture.asset(
+                                        images[i],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            );
-                          },
-                          child: const Text("회원정보수정"),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CartCameraScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                    SizedBox(
+                      height: mediaHeight(context, 1 / 100),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (_index == 0) ...[
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
                               ),
-                            );
-                          },
-                          child: const Text("카트"),
-                        ),
-                        ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const CalendarScreen(),
+                              color: Color(0xFFE87D5C),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          SizedBox(
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
                               ),
-                            );
-                          },
-                          child: const Text("기록"),
-                        )
+                              color: Color(0xFFDFDFDF),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          SizedBox(
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Color(0xFFDFDFDF),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          )
+                        ] else if (_index == 1) ...[
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Color(0xFFDFDFDF),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          SizedBox(
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Color(0xFFE87D5C),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          SizedBox(
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Color(0xFFDFDFDF),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          )
+                        ] else if (_index == 2) ...[
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Color(0xFFDFDFDF),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          SizedBox(
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Color(0xFFDFDFDF),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          SizedBox(
+                            width: mediaHeight(context, 1 / 100),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                              color: Color(0xFFE87D5C),
+                            ),
+                            height: mediaHeight(context, 1 / 100),
+                            width: mediaHeight(context, 1 / 100),
+                          )
+                        ]
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
+            ],
           ),
         ),
       ),

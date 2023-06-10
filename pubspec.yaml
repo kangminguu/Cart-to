@@ -41,6 +41,7 @@ dependencies:
   flutter_neat_and_clean_calendar: ^0.3.13+28 # https://pub.dev/packages/flutter_neat_and_clean_calendar
   camera: ^0.10.5+2
   provider: ^6.0.5
+  flutter_svg: ^2.0.5
 
   intl: ^0.18.1 # 가격 단위
 

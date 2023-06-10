@@ -111,9 +111,8 @@ class Network {
     return result;
   }
 
-  Future<List> checkShopping(email, date) async {
-    List result = [];
-    var url = Uri.parse('$host/calendarLoad');
+  Future<void> checkShopping(email, date) async {
+    var url = Uri.parse('$host/ch');
     http.Response response = await http.post(
       url,
       body: {
@@ -121,53 +120,5 @@ class Network {
         'date': date,
       },
     );
-    result = json.decode(utf8.decode(response.bodyBytes))['result'];
-
-    return result;
-  }
-
-  Future<void> SendShoppingData(
-      email, names, prices, amount, totalPrice) async {
-    var url = Uri.parse('$host/cartmakelist');
-
-    Map<String, dynamic> body = {
-      'email': email,
-      'shopping': [names, prices, amount],
-      'shopping_list': totalPrice.toString()
-    };
-
-    http.Response response = await http.post(url,
-        body: jsonEncode(body), headers: {'Content-Type': 'application/json'});
-    print(json.decode(response.body)['result']);
-  }
-
-  Future<void> Calendar(email) async {
-    var url = Uri.parse('$host/calendar');
-    http.Response response = await http.post(
-      url,
-      body: {
-        'email': email,
-      },
-    );
-    print(json.decode(response.body));
-  }
-
-  Future<void> calendarDelete(idenNum) async {
-    var url = Uri.parse('$host/calendarDelete');
-    http.Response response = await http.post(
-      url,
-      body: {'iden_num': idenNum.toString()},
-    );
-  }
-
-  Future<List> calendarLoadDetail(idenNum) async {
-    var url = Uri.parse('$host/calendarLoadDetail');
-    http.Response response = await http.post(
-      url,
-      body: {'iden_num': idenNum.toString()},
-    );
-    var result = json.decode(response.body);
-    result = result['result'];
-    return result;
   }
 }

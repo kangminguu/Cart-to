@@ -11,11 +11,6 @@ class CalendarScreen extends StatefulWidget {
 }
 
 class _CalendarScreenState extends State<CalendarScreen> {
-  List total_price = [];
-  List iden_num = [];
-  List kinds = [];
-  List product_sample = [];
-
   final List<NeatCleanCalendarEvent> _todaysEvents = [
     NeatCleanCalendarEvent(
       'Event A',
@@ -45,25 +40,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
     // Force selection of today on first load, so that the list of today's events gets shown.
   }
 
-  void check(date) async {
+  void check(date) {
     Network network = Network();
     print(date);
-    var val = await network.checkShopping('a@a.a', date.toString());
-    print(val);
-    setState(() {
-      total_price = [];
-      iden_num = [];
-      kinds = [];
-      product_sample = [];
-
-      for (var i = 0; i < val.length; i++) {
-        total_price.add(val[i]['total_price']);
-        iden_num.add(val[i]['iden_num']);
-        kinds.add(val[i]['kinds']);
-        product_sample.add(val[i]['product_sample']);
-      }
-      print("이건되는데?");
-    });
+    network.checkShopping('a@a.a', date);
   }
 
   //미디어쿼리 높이 * 비율
@@ -131,13 +111,13 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 ),
                 Calendar(
                   onDateSelected: (value) {
-                    setState(() {
-                      selectedYear = value.year;
-                      selectedMonth = value.month;
-                      selectedDate = value.day;
-                      check(DateTime(selectedYear, selectedMonth, selectedDate)
-                          .toString());
-                    });
+                    // check(DateTime(DateTime.now().year, DateTime.now().month,
+                    //         DateTime.now().day)
+                    //     .toString());
+                    selectedYear = value.year;
+                    selectedMonth = value.month;
+                    selectedDate = value.day;
+                    setState(() {});
                   },
                   datePickerType: DatePickerType
                       .hidden, // 상단 달력 아이콘, date, year, hidden 선택 가능, 일, 년 선택
@@ -215,8 +195,12 @@ class _CalendarScreenState extends State<CalendarScreen> {
                         ],
                       ),
                     ),
-                    for (var i = 0; i < total_price.length; i++)
-                      newMethod(context, i),
+                    newMethod(context),
+                    newMethod(context),
+                    newMethod(context),
+                    newMethod(context),
+                    newMethod(context),
+                    newMethod(context),
                     Container(
                       height: mediaHeight(context, 2 / 100),
                     )
@@ -230,7 +214,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     );
   }
 
-  Container newMethod(BuildContext context, int i) {
+  Container newMethod(BuildContext context) {
     return Container(
       height: mediaHeight(context, 10 / 100),
       width: mediaWidth(context, 1),
@@ -280,14 +264,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 },
                 offset: Offset(0, mediaHeight(context, 6 / 100)),
                 onSelected: (value) {
-                  Network network = Network();
-                  network.calendarDelete(iden_num[i]);
-                  setState(() {
-                    total_price.removeAt(i);
-                    iden_num.removeAt(i);
-                    kinds.removeAt(i);
-                    product_sample.removeAt(i);
-                  });
+                  print("삭제버튼");
                 },
               ),
             ),
@@ -302,7 +279,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text(
-                          product_sample[i],
+                          "오상품) 이름어쩌구저",
                           style: TextStyle(
                             color: const Color(0xFF474747),
                             fontSize: mediaWidth(context, 4 / 100),
@@ -316,7 +293,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                           ),
                         ),
                         Text(
-                          kinds[i].toString(),
+                          "5",
                           style: TextStyle(
                             color: const Color(0xFFE87D5C),
                             fontSize: mediaWidth(context, 4 / 100),
@@ -348,7 +325,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                         Text(
                           NumberFormat(
                                   '###,###,###') // 천만 단위로 넘어가면 오버플로, 백단위로 제한
-                              .format(total_price[i]),
+                              .format(100000),
                           style: TextStyle(
                             color: const Color(0xFF000000),
                             fontSize: mediaWidth(context, 4 / 100),

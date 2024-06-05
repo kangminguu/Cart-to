@@ -38,3 +38,9 @@
 
 ![a2](https://github.com/kangminguu/Cart-to/assets/131148077/5e9142af-df98-426c-98e7-6ed438232ac6)
 ![a3](https://github.com/kangminguu/Cart-to/assets/131148077/bdfd31f6-87e5-4e4c-92d2-8663be584115)
+
+
+### 전시 판넬
+<p align="center">
+  <img src="https://github.com/kangminguu/Cart-to/assets/131148077/48ef2bc6-fa5a-4347-b90c-46e49b6d0438">
+</p>

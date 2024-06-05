@@ -29,8 +29,7 @@
 
 
 ### 시스템 구조도
-![Group 363](https://github.com/kangminguu/Cart-to/assets/131148077/5d161ed4-a42c-4f06-962a-765ee11fb712)
-
+![Group 365](https://github.com/kangminguu/Cart-to/assets/131148077/fc47dec8-1c3e-442b-ac5d-9e7bec0a7cae)
 
 ### 시연 화면
 ![a4](https://github.com/kangminguu/Cart-to/assets/131148077/2e1488db-7874-405a-9295-512732a83a3c)

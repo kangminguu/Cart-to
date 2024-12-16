@@ -4,8 +4,8 @@
 
 
 ## 팀
-- <div style="width: 10px; height: 10px; background-color: #FFFFFF;"></div><div>frontend : 강민구 <a href="https://github.com/kangminguu" target="_blank"><img src="https://github.com/kangminguu/Cart-to/assets/131148077/967423e9-fe66-4b01-94cc-b0b4b74f22d4"></a></div>
-- <div>backend : 손현석 <a href="https://github.com/gustjrajt" target="_blank"><img src="https://github.com/kangminguu/Cart-to/assets/131148077/967423e9-fe66-4b01-94cc-b0b4b74f22d4"></a></div>
+- <div style="width: 10px; height: 10px; background-color: #FFFFFF;"></div><div>frontend : 강민구 <a href = "https://github.com/kangminguu"><img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white"/></a></div>
+- <div>backend : 손현석 <a href = "https://github.com/gustjrajt"><img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white"/></a></div>
 
 ## 제안배경
 - 오프라인 매장 결제 방식의 불편함
@@ -22,12 +22,12 @@
 
 
 ## YOLO 모델 학습 결과
-![Group 364](https://github.com/kangminguu/Cart-to/assets/131148077/fb4f2878-24fe-4289-bd1e-1e9640222d35)
+![Group 364](https://github.com/user-attachments/assets/abb055d1-8fe7-4b39-ac7a-a3436865f577)
 - 직접 촬영한 30개의 상품 이미지 각 100장, 총 3000장을 라벨링하여 데이터셋을 제작하였음
 
 
 ## 시스템 구조도
-![Group 365](https://github.com/kangminguu/Cart-to/assets/131148077/1657c6bb-b129-4d1e-894a-28a064e742e5)
+![Group 365](https://github.com/user-attachments/assets/817969d6-7875-472b-a828-4a1b7bffba26)
 
 ## 시연 영상 <a style="margin-right:10px;"></a><a href="https://youtu.be/kXN9bWDXBL8" target="_blank"><img src="https://img.shields.io/badge/Youtube-FF0000?style=flat-square&logo=youtube&logoColor=white"></a>
 ![a4](https://github.com/kangminguu/Cart-to/assets/131148077/2e1488db-7874-405a-9295-512732a83a3c)
@@ -39,5 +39,6 @@
 
 ## 전시 판넬
 <p align="center">
-  <img src="https://github.com/kangminguu/Cart-to/assets/131148077/48ef2bc6-fa5a-4347-b90c-46e49b6d0438">
+  <img src="https://github.com/user-attachments/assets/e689d53c-9311-4860-8559-16c5f4844bd9">
 </p>
+

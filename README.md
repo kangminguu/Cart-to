@@ -4,8 +4,8 @@
 
 
 ## 팀
-- <div style="width: 10px; height: 10px; background-color: #FFFFFF;"></div><div>frontend : 강민구 <a href="https://github.com/kangminguu" target="_blank"><img src="https://github.com/kangminguu/Cart-to/assets/131148077/967423e9-fe66-4b01-94cc-b0b4b74f22d4"></a></div>
-- <div>backend : 손현석 <a href="https://github.com/gustjrajt" target="_blank"><img src="https://github.com/kangminguu/Cart-to/assets/131148077/967423e9-fe66-4b01-94cc-b0b4b74f22d4"></a></div>
+- <div style="width: 10px; height: 10px; background-color: #FFFFFF;"></div><div>frontend : 강민구 <a href = "https://github.com/kangminguu"><img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white"/></a></div>
+- <div>backend : 손현석 <a href = "https://github.com/gustjrajt"><img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white"/></a></div>
 
 ## 제안배경
 - 오프라인 매장 결제 방식의 불편함
@@ -22,22 +22,24 @@
 
 
 ## YOLO 모델 학습 결과
-![Group 364](https://github.com/kangminguu/Cart-to/assets/131148077/fb4f2878-24fe-4289-bd1e-1e9640222d35)
+![Group 364](https://github.com/user-attachments/assets/abb055d1-8fe7-4b39-ac7a-a3436865f577)
 - 직접 촬영한 30개의 상품 이미지 각 100장, 총 3000장을 라벨링하여 데이터셋을 제작하였음
 
 
 ## 시스템 구조도
-![Group 365](https://github.com/kangminguu/Cart-to/assets/131148077/1657c6bb-b129-4d1e-894a-28a064e742e5)
+![Group 365](https://github.com/user-attachments/assets/817969d6-7875-472b-a828-4a1b7bffba26)
 
 ## 시연 영상 <a style="margin-right:10px;"></a><a href="https://youtu.be/kXN9bWDXBL8" target="_blank"><img src="https://img.shields.io/badge/Youtube-FF0000?style=flat-square&logo=youtube&logoColor=white"></a>
-![a4](https://github.com/kangminguu/Cart-to/assets/131148077/2e1488db-7874-405a-9295-512732a83a3c)
-![a1](https://github.com/kangminguu/Cart-to/assets/131148077/4b5b112f-f10e-46e0-b2ee-e62677cadd73)
 
-![a2](https://github.com/kangminguu/Cart-to/assets/131148077/5e9142af-df98-426c-98e7-6ed438232ac6)
-![a3](https://github.com/kangminguu/Cart-to/assets/131148077/bdfd31f6-87e5-4e4c-92d2-8663be584115)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8681e484-264f-4f0d-bd79-1b7ce75162fc" align="center" width="24%">
+  <img src="https://github.com/user-attachments/assets/e210eefe-3534-42dc-b992-3f576e5c2384" align="center" width="24%">
+  <img src="https://github.com/user-attachments/assets/81c7a60e-5683-4a93-8722-75771b02799b" align="center" width="24%">
+  <img src="https://github.com/user-attachments/assets/f607ba1d-6887-4c9b-a1de-801659cce1a9" align="center" width="24%">
+</p>
 
 
 ## 전시 판넬
 <p align="center">
-  <img src="https://github.com/kangminguu/Cart-to/assets/131148077/48ef2bc6-fa5a-4347-b90c-46e49b6d0438">
+  <img src="https://github.com/user-attachments/assets/e689d53c-9311-4860-8559-16c5f4844bd9">
 </p>

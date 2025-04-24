@@ -30,11 +30,13 @@
 ![Group 365](https://github.com/user-attachments/assets/817969d6-7875-472b-a828-4a1b7bffba26)
 
 ## 시연 영상 <a style="margin-right:10px;"></a><a href="https://youtu.be/kXN9bWDXBL8" target="_blank"><img src="https://img.shields.io/badge/Youtube-FF0000?style=flat-square&logo=youtube&logoColor=white"></a>
-![a4](https://github.com/kangminguu/Cart-to/assets/131148077/2e1488db-7874-405a-9295-512732a83a3c)
-![a1](https://github.com/kangminguu/Cart-to/assets/131148077/4b5b112f-f10e-46e0-b2ee-e62677cadd73)
 
-![a2](https://github.com/kangminguu/Cart-to/assets/131148077/5e9142af-df98-426c-98e7-6ed438232ac6)
-![a3](https://github.com/kangminguu/Cart-to/assets/131148077/bdfd31f6-87e5-4e4c-92d2-8663be584115)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8681e484-264f-4f0d-bd79-1b7ce75162fc" align="center" width="24%">
+  <img src="https://github.com/user-attachments/assets/e210eefe-3534-42dc-b992-3f576e5c2384" align="center" width="24%">
+  <img src="https://github.com/user-attachments/assets/81c7a60e-5683-4a93-8722-75771b02799b" align="center" width="24%">
+  <img src="https://github.com/user-attachments/assets/f607ba1d-6887-4c9b-a1de-801659cce1a9" align="center" width="24%">
+</p>
 
 
 ## 전시 판넬
